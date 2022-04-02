@@ -2,6 +2,17 @@ import kaboom from "kaboom";
 
 kaboom();
 
+const directions = {
+  UP: "up",
+  DOWN: "down",
+  LEFT: "left",
+  RIGHT: "right"
+};
+
+let current_direction = directions.RIGHT;
+let run_action = false;
+let snake_length = 3;
+let snake_body = [];
 const block_size = 20;
 
 const map = addLevel([
