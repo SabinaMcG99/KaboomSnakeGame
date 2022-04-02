@@ -172,3 +172,8 @@ function respawn_all(){
         run_action = true;
     });
 }
+
+onCollide("snake", "food", (s, f) => {
+    snake_length ++;
+    respawn_food();
+});
