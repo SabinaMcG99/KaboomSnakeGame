@@ -177,3 +177,15 @@ onCollide("snake", "food", (s, f) => {
     snake_length ++;
     respawn_food();
 });
+
+onCollide("snake", "wall", (s, w) => {
+    run_action = false;
+    shake(12);
+    respawn_all();
+});
+
+onCollide("snake", "snake", (s, t) => {
+    run_action = false;
+    shake(12);
+    respawn_all();
+});
