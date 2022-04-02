@@ -143,3 +143,23 @@ onUpdate(()=> {
     }
 
 });
+
+let food = null;
+
+function respawn_food(){
+    let new_pos = rand(vec2(1,1), vec2(13,13));
+    new_pos.x = Math.floor(new_pos.x);
+    new_pos.y = Math.floor(new_pos.y);
+    new_pos = new_pos.scale(block_size);
+
+    if (food){
+        destroy(food);
+    }
+    food = add([
+                rect(block_size ,block_size),
+                color(0,255,0),
+                pos(new_pos),
+                area(),
+                "food"
+            ]);
+}
