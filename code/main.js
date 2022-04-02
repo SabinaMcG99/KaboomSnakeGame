@@ -163,3 +163,12 @@ function respawn_food(){
                 "food"
             ]);
 }
+
+function respawn_all(){
+  run_action = false;
+    wait(0.5, function(){
+        respawn_snake();
+        respawn_food();
+        run_action = true;
+    });
+}
